@@ -156,13 +156,11 @@ def main():
         return avg_loss, overall_accuracy, class_accuracy, per_class_metrics
 
 
-    # evaluate each model and store results - MAKE SURE TO USE YOUR BATCH SIZE
+    # evaluate each model and store results
     results = {}
     for model_name, [model, batch_size] in models.items():
         avg_loss, overall_accuracy, class_accuracy, per_class_metrics = evaluate_model(model, batch_size, nn.CrossEntropyLoss(), device)
         results[model_name] = [avg_loss, overall_accuracy, class_accuracy, per_class_metrics]
-        results["Resnet51"] = [avg_loss, overall_accuracy, class_accuracy, per_class_metrics]
-        results["Resnet52"] = [avg_loss, overall_accuracy, class_accuracy, per_class_metrics]
 
 
 
