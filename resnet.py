@@ -190,7 +190,7 @@ def train_model(model, train_loader, criterion, optimizer, device, num_epochs=10
     print("--- Training complete")
     return history
 
-history = train_model(model_resnet, train_loader, criterion, optimizer, device, 1)
+history = train_model(model_resnet, train_loader, criterion, optimizer, device, 5)
 print(history)
 
 MODEL_DIR = 'tmodel_checkpoints'
@@ -217,7 +217,7 @@ optimizer_stage2 = optim.Adam(params_to_update_stage2, lr=FINETUNING_LEARNING_RA
 
 criterion = nn.CrossEntropyLoss()
 
-FINETUNING_EPOCHS = 1
+FINETUNING_EPOCHS = 5
 
 metrics_history_stage2 = train_model(
     model=model_resnet, 
